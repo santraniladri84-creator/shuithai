@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="A little introduction to Shui Thai, designer and maker.">
+  <title>Shui Thai — Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f4ef;
+      --ink: #242821;
+      --muted: #6b7068;
+      --green: #385d48;
+      --line: #dedfd6;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background-color: var(--paper);
+      background-image: radial-gradient(#d8d9d0 0.65px, transparent 0.65px);
+      background-size: 18px 18px;
+      color: var(--ink);
+      font-family: var(--sans);
+      display: grid;
+      place-items: center;
+      padding: 40px 20px;
+    }
+
+    main {
+      width: min(100%, 880px);
+      min-height: 510px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      overflow: hidden;
+      background: #fbfaf6;
+      border: 1px solid var(--line);
+      animation: arrive 650ms ease-out both;
+    }
+
+    .portrait {
+      position: relative;
+      min-height: 510px;
+      overflow: hidden;
+      background: #a9b4a4;
+    }
+
+    .portrait img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .portrait::after {
+      position: absolute;
+      inset: 55% 0 0;
+      content: "";
+      background: linear-gradient(transparent, rgb(24 34 27 / 48%));
+    }
+
+    .portrait-note {
+      position: absolute;
+      z-index: 1;
+      bottom: 24px;
+      left: 26px;
+      color: white;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(32px, 6vw, 66px);
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(38px, 5vw, 54px);
+      font-weight: 500;
+      line-height: 1.08;
+    }
+
+    .role {
+      margin: 13px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .rule {
+      width: 42px;
+      height: 1px;
+      margin: 30px 0 22px;
+      background: var(--green);
+    }
+
+    .bio {
+      max-width: 350px;
+      margin: 0;
+      color: #4e544c;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 22px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .details span { display: inline-flex; align-items: center; gap: 7px; }
+
+    .details span::before {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #8d9d87;
+      content: "";
+    }
+
+    .links {
+      display: flex;
+      gap: 22px;
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .links a {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .links a:hover { color: var(--ink); }
+    .links a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 620px) {
+      body { padding: 20px 14px; }
+      main { grid-template-columns: 1fr; }
+      .portrait { min-height: 300px; max-height: 38vh; }
+      .content { padding: 34px 28px 30px; }
+      .rule { margin: 22px 0 17px; }
+      .links { margin-top: 27px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="portrait" aria-label="Profile portrait">
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Portrait of Shui Thai">
+      <span class="portrait-note">BASED IN CHIANG MAI, THAILAND</span>
+    </section>
+    <section class="content" aria-labelledby="name">
+      <p class="eyebrow">A little introduction</p>
+      <h1 id="name">Shui Thai</h1>
+      <p class="role">Designer, maker &amp; curious human</p>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="bio">I make thoughtful digital things and enjoy the details that make everyday experiences feel a little more human. Usually found sketching, learning something new, or looking for a good cup of coffee.</p>
+      <div class="details" aria-label="Interests">
+        <span>Digital design</span>
+        <span>Slow mornings</span>
+        <span>Good ideas</span>
+      </div>
+      <nav class="links" aria-label="Social links">
+        <a href="mailto:hello@example.com">Get in touch</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </nav>
+    </section>
+  </main>
+</body>
+</html>
